@@ -1,0 +1,14 @@
+.nasa-headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.nasa-button {
+  border: 1px solid #FFF;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #FFF;
+  padding: .3rem 1rem;
+}
