@@ -1,4 +1,21 @@
 .nasa-main-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  margin: 20px 0;
+}
+
+.nasa-title {
+  grid-column: 2 / 4;
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.nasa-text {
+  grid-column: 2 / 4;
+}
+
+.nasa-image {
+  grid-column-start: 1;
 }
