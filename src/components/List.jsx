@@ -38,20 +38,24 @@ export const List = () => {
 
   return (
     <main className="nasa-main-container">
-      <h1 className="nasa-title">{data.title}</h1>
-      <p className="nasa-text">{data.explanation}</p>
-      <div
-        className="nasa-image"
-        style={{ backgroundImage: `url(${data.url})` }}
-      />
-      <div
-        className="nasa-image"
-        style={{ backgroundImage: `url(${data.url})` }}
-      />
-      <div
-        className="nasa-image"
-        style={{ backgroundImage: `url(${data.url})` }}
-      />
+      <div className="nasa-container-text">
+        <h1 className="nasa-title">{data.title}</h1>
+        <p className="nasa-text">{data.explanation}</p>
+      </div>
+      <div className="nasa-container-image">
+        <div
+          className="nasa-image"
+          style={{ backgroundImage: `url(${data.url})` }}
+        />
+        <div
+          className="nasa-image"
+          style={{ backgroundImage: `url(${data.url})` }}
+        />
+        <div
+          className="nasa-image"
+          style={{ backgroundImage: `url(${data.url})` }}
+        />
+      </div>
     </main>
   );
 };

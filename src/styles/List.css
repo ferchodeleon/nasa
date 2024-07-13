@@ -1,21 +1,29 @@
 .nasa-main-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
   margin: 20px 0;
 }
 
+.nasa-container-image {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
 .nasa-title {
-  grid-column: 2 / 4;
   text-align: center;
   font-weight: bold;
   color: #FFF;
 }
 
 .nasa-text {
-  grid-column: 2 / 4;
+  max-width: 50%;
+  margin: 10px auto;
+  color: #FFF;
 }
 
 .nasa-image {
-  grid-column-start: 1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
