@@ -4,8 +4,14 @@
 
 .nasa-container-image {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  gap: 20px;
+  padding: 10rem;
+}
+
+.nasa-otherText {
+  color: aliceblue;
 }
 
 .nasa-title {
@@ -22,7 +28,7 @@
 
 .nasa-image {
   width: 100%;
-  height: 100%;
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
