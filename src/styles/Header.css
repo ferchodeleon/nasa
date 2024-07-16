@@ -6,9 +6,11 @@
 }
 
 .nasa-button {
+  cursor: pointer;
   border: 1px solid #FFF;
   border-radius: 8px;
   background-color: transparent;
   color: #FFF;
+  font-size: 1.1rem;
   padding: .3rem 1rem;
 }
