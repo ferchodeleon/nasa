@@ -1,11 +1,21 @@
+import { useState } from "react";
 import { Header } from "./components/Header";
-import { List } from "./components/List";
+import { UniqueImage } from "./components/UniqueImage";
 
 function App() {
+  const [dateToday, setDateToday] = useState(null);
+
+  const handleToday = () => {
+    let date = new Date();
+    setDateToday(`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`);
+  };
+
+  console.log("Fecha", dateToday);
   return (
     <>
-      <Header />
-      <List />
+      <Header dateToday={dateToday} handleToday={handleToday} />
+      {dateToday ? <UniqueImage todayDate={dateToday} /> : ""}
+      {/* <List todayDate={dateToday} /> */}
     </>
   );
 }
