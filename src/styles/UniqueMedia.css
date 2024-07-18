@@ -1,0 +1,67 @@
+.nasa-media-container {
+  margin: 20px 12vw;
+}
+
+.nasa-media-title, .nasa-media-text {
+  color: #FFF;
+  text-align: center;
+}
+
+.nasa-media-text {
+  margin: 20px 15%;
+  letter-spacing: 1px;
+}
+
+.nasa-media-container-image {
+  width: 100%;
+  height: 75vh;
+}
+
+.nasa-media-image, .nasa-media-video {
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.nasa-media-image {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.nasa-type-mediaContainer, .nasa-nameImage, .nasa-explanation{
+  padding: 5px 20px;
+  border-radius: 30px;
+  background-color: #00000044;
+  box-shadow: 1px 1px 8px 1px #88868688;
+}
+
+.nasa-nameImage {
+  position: absolute;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.nasa-nameImage-title {
+  color: #FFF;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.nasa-type-media {
+  color: #FFF;
+  font-size: 0.7rem;
+}
+
+.nasa-type-media span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.nasa-type-mediaContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 1rem 1rem 0;
+}
