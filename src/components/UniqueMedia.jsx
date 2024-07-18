@@ -56,7 +56,17 @@ export const UniqueMedia = ({ todayDate }) => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowfullscreen
-          ></iframe>
+          >
+            <div className="nasa-nameImage">
+              <p className="nasa-nameImage-title">{data.title}</p>
+            </div>
+            <div className="nasa-type-mediaContainer">
+              <p className="nasa-type-media">
+                <span>Tipo de medio:</span>
+                {` ${data.media_type}`}
+              </p>
+            </div>
+          </iframe>
         ) : (
           <div
             className="nasa-media-image"

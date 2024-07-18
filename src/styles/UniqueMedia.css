@@ -17,6 +17,10 @@
   height: 75vh;
 }
 
+.nasa-media-video {
+  position: relative;
+}
+
 .nasa-media-image, .nasa-media-video {
   border-radius: 30px;
   width: 100%;
