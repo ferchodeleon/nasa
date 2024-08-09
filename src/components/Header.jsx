@@ -8,12 +8,22 @@ export const Header = ({ dateToday, handleToday }) => {
       <button
         type="button"
         className="nasa-button .today"
-        onClick={handleToday}
+        onClick={() => handleToday("today")}
       >
         {dateToday !== null ? `Foto del día: ${dateToday}` : "Imagen del día"}
       </button>
-      <button className="nasa-button .search">SEARCH</button>
-      <button className="nasa-button .contact">CONTACT</button>
+      <button
+        className="nasa-button .search"
+        onClick={() => handleToday("dates")}
+      >
+        Buscar por fecha
+      </button>
+      <button
+        className="nasa-button .contact"
+        onClick={() => handleToday("random")}
+      >
+        Random
+      </button>
     </header>
   );
 };
