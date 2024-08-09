@@ -11,5 +11,7 @@
 body {
   margin: 1rem 2rem;
   padding: 0;
-  background-color: #101010;
+  /* background-color: #101010; */
+  background-image: url('./assets/img/background.svg');
+  color: #FFF;
 }
