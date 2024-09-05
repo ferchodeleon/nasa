@@ -4,7 +4,8 @@
 }
 
 .filterDate-calendar {
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .filterDate-input {
@@ -15,8 +16,10 @@
   border: 1px solid #FFF;
   border-radius: 10px;
   padding: 8px;
+  margin-left: 1rem;
   background-image: #FFF;
   color-scheme: dark;
+  max-height: 1.7rem;
 }
 
 .filterDate-dateSelected {
