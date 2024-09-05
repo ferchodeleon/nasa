@@ -9,10 +9,18 @@ export const FilterDates = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const dateNow = new Date();
+  const actuallyDate = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1}-${
+    dateNow.getDay() + 1
+  }`;
+  const [textDate, setTextDate] = useState("Esperando fecha...");
 
   const handleChangeDate = (e) => {
-    setDate(e.target.value);
-    console.log(date);
+    if (e.target.value < actuallyDate) {
+      // setTextDate("Invalid date");
+      setDate(e.target.value);
+    }
+    console.log("FECHA:", date);
   };
 
   useEffect(() => {
@@ -32,22 +40,24 @@ export const FilterDates = () => {
     };
 
     fetchData();
-  });
+  }, [date]);
+
+  console.log("Actually", actuallyDate);
 
   return (
     <section className="filterDate-container">
       <div className="filterDate-calendar">
-        <h2>Selecciona la fecha de la foto</h2>
+        <h2>Selecciona la fecha de la foto:</h2>
         <input
           type="date"
           className="filterDate-input"
-          max={Date()}
+          max={actuallyDate}
           onChange={handleChangeDate}
         />
       </div>
       <div className="filterDate-info">
         <p className="filterDate-dateSelected">
-          Fecha seleccionada: <span>{date ? date : "Esperando fecha..."}</span>
+          Fecha seleccionada: <span>{date ? date : textDate}</span>
         </p>
         <div className="filterDate-container-media">
           {date ? (
