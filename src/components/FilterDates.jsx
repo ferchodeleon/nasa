@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/FilterDates.css";
 import { Media } from "./Media";
+import { useTranslation } from "react-i18next";
 
 export const FilterDates = () => {
   const url = "https://api.nasa.gov/planetary/apod?";
@@ -13,18 +14,23 @@ export const FilterDates = () => {
   const actuallyDate = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1}-${
     dateNow.getDay() + 1
   }`;
-  const [textDate, setTextDate] = useState("Esperando fecha...");
+  const [t, i18n] = useTranslation("global");
 
   const handleChangeDate = (e) => {
-    if (e.target.value < actuallyDate) {
+    if (e.target.value <= actuallyDate) {
       // setTextDate("Invalid date");
-      setDate(e.target.value);
+      setTimeout(() => {
+        setDate(e.target.value);
+      }, "1 second");
     }
     console.log("FECHA:", date);
   };
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!date) return;
+
+      setLoading(true);
       try {
         const response = await fetch(`${url}api_key=${KEY}&date=${date}`);
         if (!response.ok) {
@@ -47,7 +53,7 @@ export const FilterDates = () => {
   return (
     <section className="filterDate-container">
       <div className="filterDate-calendar">
-        <h2>Selecciona la fecha de la foto:</h2>
+        <h2>{t("selectDatePhoto")}</h2>
         <input
           type="date"
           className="filterDate-input"
@@ -57,10 +63,14 @@ export const FilterDates = () => {
       </div>
       <div className="filterDate-info">
         <p className="filterDate-dateSelected">
-          Fecha seleccionada: <span>{date ? date : textDate}</span>
+          {date ? `Fecha seleccionada: ${date}` : ""}
         </p>
         <div className="filterDate-container-media">
-          {date ? (
+          {loading ? (
+            "Esperando por imagen..."
+          ) : error ? (
+            <p>{error}</p>
+          ) : date ? (
             <Media data={data} />
           ) : (
             "Escoge una fecha para mostrar tu imagen"
