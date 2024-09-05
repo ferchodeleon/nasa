@@ -4,48 +4,47 @@ import { UniqueMedia } from "./components/UniqueMedia";
 import { FilterDates } from "./components/FilterDates";
 
 function App() {
-  const [dateToday, setDateToday] = useState(null);
   const [filterDate, setFilterDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
   const [component, setComponent] = useState(null);
 
-  const handleToday = () => {
-    let date = new Date();
-    setDateToday(
-      `${date.getFullYear()}-${date.getMonth()}-${date.getDay() - 3}`
+  const handleChangeDate = () => {
+    const date = new Date();
+    setFilterDate(
+      `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDay() + 1}`
     );
+    console.log("Fecha en handle", filterDate);
   };
 
   const handleRamdonDate = () => {};
 
   const filterSelect = (isSelect) => {
-    let selected = null;
+    let componentt = null;
     switch (isSelect) {
       case "today":
-        handleToday();
-        selected = <UniqueMedia todayDate={dateToday} />;
+        handleChangeDate();
+        console.log("filterDate", filterDate);
+        componentt = <UniqueMedia todayDate={filterDate} />;
         break;
       case "dates":
+        setFilterDate(null);
         handleRamdonDate();
-        selected = <FilterDates />;
+        componentt = <FilterDates />;
         break;
       case "random":
-        selected = <p>RANDOM</p>;
+        componentt = <p>RANDOM</p>;
         break;
       default:
-        selected = <p>Selecciono un elemento erroneo</p>;
+        componentt = <p>Selecciono un elemento erroneo</p>;
         break;
     }
-    setComponent(selected);
+    setComponent(componentt);
   };
 
-  console.log("Fecha", dateToday);
+  console.log("Fecha:", filterDate);
   return (
     <>
-      <Header dateToday={dateToday} handleToday={filterSelect} />
+      <Header dateToday={filterDate} handleToday={filterSelect} />
       {component}
-      {/* {dateToday ? <UniqueMedia todayDate={dateToday} /> : ""} */}
-      {/* <List todayDate={dateToday} /> */}
     </>
   );
 }
