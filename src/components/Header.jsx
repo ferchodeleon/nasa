@@ -1,29 +1,15 @@
 import PropTypes from "prop-types";
 
+import { FilterComponent } from "./FilterComponent";
+
+import ImageMoon from "../assets/icon/icon-planet.png";
 import "../styles/Header.css";
 
 export const Header = ({ dateToday, handleToday }) => {
   return (
     <header className="nasa-headerContainer">
-      <button
-        type="button"
-        className="nasa-button .today"
-        onClick={() => handleToday("today")}
-      >
-        {dateToday !== null ? `Foto del día: ${dateToday}` : "Imagen del día"}
-      </button>
-      <button
-        className="nasa-button .search"
-        onClick={() => handleToday("dates")}
-      >
-        Buscar por fecha
-      </button>
-      <button
-        className="nasa-button .contact"
-        onClick={() => handleToday("random")}
-      >
-        Random
-      </button>
+      <img src={ImageMoon} alt="Icon planet" className="header-image" />
+      <FilterComponent dateToday={dateToday} handleToday={handleToday} />
     </header>
   );
 };
