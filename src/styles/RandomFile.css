@@ -1,0 +1,22 @@
+.random-container {
+  margin: 2rem 0;
+}
+
+.random-button-container {
+  width: 100%;
+  text-align: center;
+}
+
+.random-button {
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 1.1rem;
+  padding: .3rem 1rem;
+  box-shadow: 3px 2px 4px 1px rgba(255, 255, 255, 0.8);
+}
+
+.random-file {
+  display: grid;
+}
