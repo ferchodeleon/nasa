@@ -22,7 +22,6 @@ export const RandomFile = () => {
     const newDate = randomDate(lastDate, date);
     const formatDate = `${newDate.getFullYear()}-${newDate.getMonth()}-${newDate.getDate()}`;
 
-    console.log("random", formatDate);
     setDate(formatDate);
   };
 
