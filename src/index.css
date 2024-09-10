@@ -9,7 +9,7 @@
 }
 
 body {
-  margin: 1rem 2rem;
+  margin: 0;
   padding: 0;
   /* background-color: #101010; */
   background-image: url('./assets/img/background.svg');
