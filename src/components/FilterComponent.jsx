@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 
 import "../styles/FilterComponent.css";
+import { useTranslation } from "react-i18next";
 
 export const FilterComponent = ({ dateToday, handleToday }) => {
+  const [t] = useTranslation("global");
+
   return (
     <div className="filter-container">
       <button
@@ -10,19 +13,21 @@ export const FilterComponent = ({ dateToday, handleToday }) => {
         className="filter-button today"
         onClick={() => handleToday("today")}
       >
-        {dateToday !== null ? `Foto del día: ${dateToday}` : "Imagen del día"}
+        {dateToday !== null
+          ? `${t("filterComponent.photoDay")}: ${dateToday}`
+          : `${t("filterComponent.imageDay")}`}
       </button>
       <button
         className="filter-button search"
         onClick={() => handleToday("dates")}
       >
-        Buscar por fecha
+        {t("filterComponent.searchDate")}
       </button>
       <button
         className="filter-button contact"
         onClick={() => handleToday("random")}
       >
-        Random
+        {t("filterComponent.imageRandom")}
       </button>
     </div>
   );
