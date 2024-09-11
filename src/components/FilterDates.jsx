@@ -14,7 +14,7 @@ export const FilterDates = () => {
   const actuallyDate = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1}-${
     dateNow.getDay() + 1
   }`;
-  const [t, i18n] = useTranslation("global");
+  const [t] = useTranslation("global");
 
   const handleChangeDate = (e) => {
     if (e.target.value <= actuallyDate) {
