@@ -7,14 +7,14 @@ export const Portrait = () => {
   const restartAnimation = () => {
     const element = typewriteRef.current;
     element.style.animation = "none";
-    setTimeout(() => (element.style.animation = ""), 1000);
+    setTimeout(() => (element.style.animation = ""), 500);
   };
 
   useEffect(() => {
     const element = typewriteRef.current;
 
     const handleAnimationEnd = () => {
-      setTimeout(restartAnimation, 1000);
+      setTimeout(restartAnimation, 500);
     };
 
     element.addEventListener("animationend", handleAnimationEnd);

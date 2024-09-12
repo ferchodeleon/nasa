@@ -13,8 +13,7 @@
 .portrait-container p {
   color: #FFF;
   width: 30ch;
-  animation: olivetti 5s steps(30) 1s 1 normal forwards, pampalluga 0.5s step-end infinite alternate;
-  animation-delay: 2s;
+  animation: olivetti 5s steps(30) 1s normal forwards, pampalluga 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #FFF;
