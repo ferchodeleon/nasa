@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/RandomFile.css";
 import { Media } from "./Media";
+import { useTranslation } from "react-i18next";
 
 export const RandomFile = () => {
   const url = "https://api.nasa.gov/planetary/apod?";
@@ -8,6 +9,8 @@ export const RandomFile = () => {
   const [date, setDate] = useState(null);
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [t] = useTranslation("global");
 
   const randomDate = (startDate, endDate) => {
     return new Date(
@@ -50,16 +53,20 @@ export const RandomFile = () => {
     <section className="random-container">
       <div className="random-button-container">
         <button className="random-button" onClick={handleRandomFile}>
-          Toca y saldra una imagen aleatoria
+          {date
+            ? t("randomImage.loadNewImage")
+            : t("randomImage.touchForImage")}
         </button>
       </div>
       <div className="random-file">
         {loading ? (
-          "Esperando"
+          t("randomImage.waiting")
         ) : !file ? (
           "Esperando toque el botón"
         ) : (
-          <Media data={file} />
+          <>
+            <Media data={file} />
+          </>
         )}
       </div>
     </section>
