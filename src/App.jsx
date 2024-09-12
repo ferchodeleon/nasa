@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Header } from "./components/Header";
 import { UniqueMedia } from "./components/UniqueMedia";
 import { FilterDates } from "./components/FilterDates";
 import { RandomFile } from "./components/RandomFile";
 import { Portrait } from "./components/Portrait";
+import { Body } from "./components/Body";
 
 function App() {
   const [filterDate, setFilterDate] = useState(null);
@@ -46,8 +46,11 @@ function App() {
   return (
     <>
       <Portrait />
-      <Header dateToday={filterDate} handleToday={filterSelect} />
-      {component}
+      <Body
+        filterDate={filterDate}
+        filterSelect={filterSelect}
+        component={component}
+      />
     </>
   );
 }
