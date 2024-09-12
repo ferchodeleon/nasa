@@ -37,8 +37,6 @@ export const UniqueMedia = ({ todayDate }) => {
   if (error)
     return <p className="nasa-otherText">Hubo un error: {error.message}</p>;
 
-  console.log("DATA", data);
-
   return (
     <main className="nasa-media-container">
       <div className="nasa-media-text-container">
