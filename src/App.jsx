@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Header } from "./components/Header";
 import { UniqueMedia } from "./components/UniqueMedia";
 import { FilterDates } from "./components/FilterDates";
+import { RandomFile } from "./components/RandomFile";
+import { Portrait } from "./components/Portrait";
 
 function App() {
   const [filterDate, setFilterDate] = useState(null);
@@ -31,7 +33,7 @@ function App() {
         componentt = <FilterDates />;
         break;
       case "random":
-        componentt = <p>RANDOM</p>;
+        componentt = <RandomFile />;
         break;
       default:
         componentt = <p>Selecciono un elemento erroneo</p>;
@@ -43,6 +45,7 @@ function App() {
   console.log("Fecha:", filterDate);
   return (
     <>
+      <Portrait />
       <Header dateToday={filterDate} handleToday={filterSelect} />
       {component}
     </>
