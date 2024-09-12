@@ -1,3 +1,22 @@
 {
+  "header": {
+    "spanish": "ES",
+    "english": "EN"
+  },
+  "media": {
+    "date": "Fecha:",
+    "serviceVersion": "Service version:"
+  },
+  "randomImage": {
+    "loadNewImage": "Load new image",
+    "touchForImage": "Touch for Image",
+    "waiting": "Waiting"
+  },
+  "filterComponent": {
+    "photoDay": "Photo of day",
+    "imageDay": "Image of day",
+    "searchDate": "Search for date",
+    "imageRandom": "Image random"
+  },
   "selectDatePhoto": "Select date of photo:"
 }
