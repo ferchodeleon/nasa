@@ -13,9 +13,10 @@ export const FilterComponent = ({ dateToday, handleToday }) => {
         className="filter-button today"
         onClick={() => handleToday("today")}
       >
-        {dateToday !== null
+        X
+        {/* {dateToday !== null
           ? `${t("filterComponent.photoDay")}: ${dateToday}`
-          : `${t("filterComponent.imageDay")}`}
+          : `${t("filterComponent.imageDay")}`} */}
       </button>
       <button
         className="filter-button search"
