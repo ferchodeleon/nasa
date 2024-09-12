@@ -34,13 +34,6 @@
   background-position: center;
 }
 
-.nasa-type-mediaContainer, .nasa-nameImage, .nasa-explanation{
-  padding: 5px 20px;
-  border-radius: 30px;
-  background-color: #00000044;
-  box-shadow: 1px 1px 8px 1px #88868688;
-}
-
 .nasa-nameImage {
   position: absolute;
   margin-left: 1rem;
