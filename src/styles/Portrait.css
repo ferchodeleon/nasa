@@ -1,0 +1,49 @@
+.portrait-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: #000;
+  min-height: 100vh;
+  width: 100%;
+  /* background-image: url('../assets//img/moon.jpeg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portrait-container p {
+  color: #FFF;
+  width: 30ch;
+  animation: olivetti 5s steps(30) 1s 1 normal forwards, pampalluga 0.5s step-end infinite alternate;
+  animation-delay: 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #FFF;
+}
+
+.portrait-container h1, .portrait-container p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.portrait-container h1 {
+  font-family: 'space-age';
+  font-weight: 100;
+  font-style: normal;
+  font-size: 6rem;
+}
+
+.portrait-container p {
+  font-size: 1rem;
+}
+
+@keyframes olivetti {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes pampalluga {
+  50% {
+    border-color: transparent;
+  }
+}
