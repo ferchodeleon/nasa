@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
 
-import { FilterComponent } from "./FilterComponent";
-
 import IconSpanish from "../assets/img/spanish.webp";
 import IconEnglish from "../assets/img/english.png";
 import "../styles/Header.css";
 import { useTranslation } from "react-i18next";
 
-export const Header = ({ dateToday, handleToday }) => {
+export const Header = () => {
   const [t, i18n] = useTranslation("global");
 
   const handleChangeLanguage = (lang) => {
@@ -42,7 +40,6 @@ export const Header = ({ dateToday, handleToday }) => {
           </button>
         </div>
       </div>
-      <FilterComponent dateToday={dateToday} handleToday={handleToday} />
     </header>
   );
 };
