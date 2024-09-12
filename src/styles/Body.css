@@ -1,0 +1,7 @@
+.body-container {
+  height: calc(100vh - 2rem);
+}
+
+.main-container {
+  display: flex;
+}
